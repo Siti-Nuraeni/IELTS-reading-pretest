@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Achieve IELTS – Academic Reading Test 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFAF6;--surface:#FFFFFF;--ink:#1C2430;--muted:#5B6573;--line:#DAD6CB;
+  --accent:#1E6B52;--accent-ink:#FFFFFF;--accent-soft:#E2EFE9;--hi:#F6E3A1;
+  --ok:#1E7A4F;--okbg:#E3F2EA;--bad:#B3392F;--badbg:#F8E3E0;--skip:#8A8F98;--skipbg:#EEEDE8;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14181D;--surface:#1C2229;--ink:#E7E9EC;--muted:#9AA3AE;--line:#2E3640;
+    --accent:#5FB894;--accent-ink:#0E1A14;--accent-soft:#1A3329;--hi:#4F4419;
+    --ok:#6FCF97;--okbg:#173126;--bad:#F08A7E;--badbg:#3A1E1B;--skip:#8A919B;--skipbg:#252B33;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14181D;--surface:#1C2229;--ink:#E7E9EC;--muted:#9AA3AE;--line:#2E3640;
+  --accent:#5FB894;--accent-ink:#0E1A14;--accent-soft:#1A3329;--hi:#4F4419;
+  --ok:#6FCF97;--okbg:#173126;--bad:#F08A7E;--badbg:#3A1E1B;--skip:#8A919B;--skipbg:#252B33;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;height:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hidden{display:none!important}
+
+/* ---------- Welcome ---------- */
+.welcome{min-height:100%;display:grid;place-items:center;padding:24px}
+.welcome-card{width:100%;max-width:520px}
+.welcome h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;margin:0 0 12px;letter-spacing:-.01em}
+.welcome .sub{color:var(--muted);margin:0 0 28px;max-width:46ch}
+.facts{display:flex;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:28px;background:var(--surface)}
+.facts div{flex:1;padding:12px 14px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--serif);font-size:1.5rem;line-height:1.1}
+.facts span{font-size:.85rem;color:var(--muted)}
+label.field{display:block;font-weight:600;margin-bottom:6px}
+.name-input{width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:8px;background:var(--surface);font-size:1.1rem}
+.name-input:focus{border-color:var(--accent);outline:none}
+.err{color:var(--bad);font-size:.9rem;min-height:1.4em;margin:6px 0 10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:8px;border:2px solid transparent;font-weight:600;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ink);filter:none}
+.btn.wide{width:100%}
+.resume{margin-top:14px;padding:14px;border:1px dashed var(--line);border-radius:8px;font-size:.95rem}
+.resume .btn{margin-top:10px}
+.rules{margin-top:26px;font-size:.92rem;color:var(--muted);padding-left:18px}
+.rules li{margin-bottom:4px}
+
+/* ---------- Test ---------- */
+.test{display:flex;flex-direction:column;min-height:100%}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.who{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tabs{display:flex;gap:4px;flex:1;min-width:0}
+.tab{border:0;background:transparent;padding:8px 12px;border-radius:6px;cursor:pointer;color:var(--muted);font-weight:500;white-space:nowrap}
+.tab small{display:block;font-size:.75rem;font-weight:400}
+.tab[aria-selected="true"]{background:var(--accent-soft);color:var(--ink);font-weight:600}
+.meta{display:flex;align-items:center;gap:14px;margin-left:auto}
+.progress{font-size:.9rem;color:var(--muted);white-space:nowrap}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.15rem;padding:4px 10px;border-radius:6px;border:2px solid var(--line);min-width:84px;text-align:center}
+.timer.warn{border-color:var(--bad);color:var(--bad)}
+.split{display:grid;grid-template-columns:1fr;flex:1}
+.pane{padding:24px clamp(16px,4vw,40px) 40px}
+.passage{background:var(--surface);border-bottom:1px solid var(--line)}
+@media (min-width:960px){
+  .test{height:100%;min-height:0}
+  .split{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:0}
+  .pane{overflow-y:auto;min-height:0}
+  .passage{border-bottom:0;border-right:1px solid var(--line)}
+}
+.passage .intro{font-size:.9rem;color:var(--muted);font-style:italic;margin:0 0 18px}
+.passage h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.15;margin:0 0 6px}
+.passage .standfirst{font-family:var(--serif);font-weight:600;margin:0 0 18px}
+.passage p,.passage .lp{font-family:var(--serif);font-size:1.06rem;line-height:1.68;margin:0 0 1em;max-width:70ch}
+.lp{display:grid;grid-template-columns:1.8em 1fr;gap:4px}
+.lp b{font-family:var(--sans);color:var(--accent)}
+.footnote{font-size:.88rem!important;color:var(--muted);font-style:italic}
+.source{font-size:.8rem!important;color:var(--muted)}
+.qs{max-width:720px}
+.group{margin-bottom:34px}
+.group h3{font-size:1.1rem;margin:0 0 6px}
+.instr{color:var(--muted);font-size:.94rem;margin:0 0 4px}
+.instr strong{color:var(--ink)}
+.key{margin:10px 0 14px;font-size:.9rem;border-left:3px solid var(--line);padding:4px 0 4px 12px;color:var(--muted)}
+.key b{color:var(--ink);display:inline-block;min-width:96px}
+.q{display:grid;grid-template-columns:2.2em 1fr;gap:6px 8px;padding:12px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0}
+.num{font-weight:700;font-variant-numeric:tabular-nums;padding-top:2px}
+.q.answered .num{color:var(--accent)}
+.qtext{margin:0 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-block;padding:6px 12px;border:1.5px solid var(--line);border-radius:999px;font-size:.9rem;font-weight:500;background:var(--surface);cursor:pointer}
+.chip input:checked + span{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chip input:focus-visible + span{outline:3px solid var(--accent);outline-offset:2px}
+.gap{display:inline-block;width:12em;max-width:100%;padding:3px 8px;border:0;border-bottom:2px solid var(--muted);background:var(--accent-soft);border-radius:4px 4px 0 0}
+.gap:focus{outline:none;border-bottom-color:var(--accent);background:var(--hi)}
+.gapnum{font-weight:700;font-size:.85rem;margin-right:3px}
+select.pick{padding:6px 10px;border:1.5px solid var(--line);border-radius:6px;background:var(--surface);min-width:5.5em;cursor:pointer}
+.qrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px}
+.qrow .qtext{margin:0;flex:1 1 260px}
+.summary{background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:16px 18px;line-height:2.2;margin-top:10px}
+.summary h4{margin:0 0 4px;text-align:center;font-size:1rem;line-height:1.4}
+.mcq label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;margin-bottom:6px;cursor:pointer;background:var(--surface)}
+.mcq input{margin-top:5px;accent-color:var(--accent)}
+.mcq label:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.endings{display:grid;grid-template-columns:1.6em 1fr;gap:4px 6px;font-size:.93rem;margin:10px 0 14px;background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px}
+.endings b{color:var(--accent)}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:10px;padding-top:18px;border-top:1px solid var(--line)}
+
+/* ---------- Modal ---------- */
+.modal{position:fixed;inset:0;background:rgba(10,14,20,.55);display:grid;place-items:center;padding:20px;z-index:20}
+.modal-box{background:var(--surface);border-radius:12px;max-width:420px;width:100%;padding:24px}
+.modal-box h3{margin:0 0 8px;font-family:var(--serif);font-size:1.4rem}
+.modal-box p{margin:0 0 18px;color:var(--muted)}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+
+/* ---------- Results ---------- */
+.results{max-width:980px;margin:0 auto;padding:32px clamp(16px,4vw,32px) 48px}
+.res-head{display:grid;grid-template-columns:1fr;gap:24px;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:26px}
+@media (min-width:720px){.res-head{grid-template-columns:1.3fr 1fr}}
+.res-head .for{color:var(--muted);margin:0 0 4px}
+.res-head h1{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.1;margin:0 0 6px;overflow-wrap:anywhere}
+.res-head .when{color:var(--muted);font-size:.9rem;margin:0}
+.scorebox{display:flex;gap:28px;align-items:flex-end;justify-content:flex-start}
+@media (min-width:720px){.scorebox{justify-content:flex-end}}
+.big{font-family:var(--serif);font-weight:700;font-size:clamp(3.6rem,11vw,5.4rem);line-height:.9;font-variant-numeric:tabular-nums}
+.big small{font-size:.38em;color:var(--muted);font-weight:600}
+.band{text-align:center;border:2px solid var(--accent);border-radius:10px;padding:8px 16px}
+.band b{display:block;font-family:var(--serif);font-size:2.2rem;line-height:1;color:var(--accent)}
+.band span{font-size:.8rem;color:var(--muted)}
+.cols{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:34px}
+@media (min-width:720px){.cols{grid-template-columns:1fr 1fr}}
+.cols h2,.sheet h2{font-size:1.05rem;margin:0 0 12px}
+.meter{margin-bottom:14px}
+.meter-top{display:flex;justify-content:space-between;font-size:.93rem;margin-bottom:5px;gap:10px}
+.meter-top span:last-child{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.track{height:10px;border-radius:999px;background:var(--skipbg);overflow:hidden}
+.fill{height:100%;background:var(--accent);border-radius:999px;width:0;transition:width .9s ease}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.stat{flex:1 1 90px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--surface)}
+.stat b{display:block;font-size:1.4rem;font-variant-numeric:tabular-nums}
+.stat span{font-size:.82rem;color:var(--muted)}
+.sheet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.cell{display:grid;grid-template-columns:2.1em 1fr 1.4em;align-items:center;gap:6px;padding:8px 10px;border-radius:8px;font-size:.9rem;border:1.5px solid transparent}
+.cell .n{font-weight:700;font-variant-numeric:tabular-nums}
+.cell .a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cell .m{font-weight:700;text-align:right}
+.cell.ok{background:var(--okbg);color:var(--ok)}
+.cell.bad{background:var(--badbg);color:var(--bad)}
+.cell.skip{background:var(--skipbg);color:var(--skip)}
+.cell .a{color:var(--ink)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.sheet-sec{margin-bottom:22px}
+.sheet-sec h3{font-size:.92rem;color:var(--muted);font-weight:600;margin:0 0 8px}
+.res-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.note{font-size:.85rem;color:var(--muted);margin-top:14px}
+@media print{
+  body::before,.res-actions{display:none}
+  .results{padding:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ WELCOME ============ -->
+<section id="welcome" class="welcome">
+  <div class="welcome-card">
+    <h1>Academic Reading Test&nbsp;1</h1>
+    <p class="sub">Three passages from <em>Achieve IELTS</em>. Read each passage, then answer the questions beside it. Your score report appears when you submit.</p>
+    <div class="facts">
+      <div><b>3</b><span>passages</span></div>
+      <div><b>40</b><span>questions</span></div>
+      <div><b>60</b><span>minutes</span></div>
+    </div>
+    <label class="field" for="nameInput">What’s your name?</label>
+    <input id="nameInput" class="name-input" type="text" autocomplete="name" maxlength="60" placeholder="Type your full name">
+    <p class="err" id="nameErr" role="alert"></p>
+    <button class="btn wide" id="startBtn">Start the test</button>
+    <div class="resume hidden" id="resumeBox">
+      <span id="resumeText"></span><br>
+      <button class="btn ghost" id="resumeBtn">Continue where I left off</button>
+    </div>
+    <ul class="rules">
+      <li>The timer starts when you press Start and the test submits itself at 0:00.</li>
+      <li>You can move between passages and change answers any time before you submit.</li>
+      <li>Spelling counts for written answers.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ TEST ============ -->
+<section id="test" class="test hidden">
+  <header class="bar">
+    <div class="who" id="whoName"></div>
+    <nav class="tabs" role="tablist" aria-label="Passages">
+      <button class="tab" role="tab" data-p="0" aria-selected="true">Passage 1<small>Q 1–13</small></button>
+      <button class="tab" role="tab" data-p="1" aria-selected="false">Passage 2<small>Q 14–26</small></button>
+      <button class="tab" role="tab" data-p="2" aria-selected="false">Passage 3<small>Q 27–40</small></button>
+    </nav>
+    <div class="meta">
+      <span class="progress" id="progress">0 of 40 answered</span>
+      <span class="timer" id="timer" aria-live="off" title="Time remaining">60:00</span>
+      <button class="btn" id="submitTop">Submit</button>
+    </div>
+  </header>
+  <div class="split">
+    <article class="pane passage" id="passagePane" tabindex="0" aria-label="Reading passage"></article>
+    <div class="pane" id="questionPane"><div class="qs" id="qs"></div></div>
+  </div>
+</section>
+
+<!-- ============ MODAL ============ -->
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <h3 id="modalTitle">Submit your answers?</h3>
+    <p id="modalText"></p>
+    <div class="modal-actions">
+      <button class="btn ghost" id="cancelSubmit">Keep working</button>
+      <button class="btn" id="confirmSubmit">Submit answers</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ RESULTS ============ -->
+<section id="results" class="results hidden" aria-live="polite">
+  <div class="res-head">
+    <div>
+      <p class="for">Score report for</p>
+      <h1 id="resName"></h1>
+      <p class="when" id="resWhen"></p>
+    </div>
+    <div class="scorebox">
+      <div class="big"><span id="resScore">0</span><small>/40</small></div>
+      <div class="band"><b id="resBand">–</b><span>est. band</span></div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>By passage</h2>
+      <div id="byPassage"></div>
+      <div class="stats">
+        <div class="stat"><b id="stCorrect">0</b><span>correct</span></div>
+        <div class="stat"><b id="stWrong">0</b><span>incorrect</span></div>
+        <div class="stat"><b id="stBlank">0</b><span>left blank</span></div>
+        <div class="stat"><b id="stTime">0:00</b><span>time used</span></div>
+      </div>
+    </div>
+    <div>
+      <h2>By question type</h2>
+      <div id="byType"></div>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <h2>Your answer sheet</h2>
+    <div class="legend"><span><i style="background:var(--okbg);border:1px solid var(--ok)"></i>Correct</span><span><i style="background:var(--badbg);border:1px solid var(--bad)"></i>Incorrect</span><span><i style="background:var(--skipbg);border:1px solid var(--skip)"></i>Blank</span></div>
+    <div id="sheet"></div>
+  </div>
+
+  <p class="note">The band score is an estimate based on the usual Academic Reading conversion and is for practice only. Ask your teacher to go through the questions you missed.</p>
+  <div class="res-actions">
+    <button class="btn" id="printBtn">Print report</button>
+    <button class="btn ghost" id="retakeBtn">Start a new attempt</button>
+  </div>
+</section>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- Content ---------- */
+const PASSAGES = [
+`<p class="intro">You should spend about 20 minutes on Questions 1–13, which are based on Reading Passage 1.</p>
+<h2>Trans Fatty Acids</h2>
+<p>A recent editorial in the British Medical Journal (BMJ), written by researchers from the University of Oxford, has called for food labels to list trans fats as well as cholesterol and saturated fat.</p>
+<p>Trans fats (or trans fatty acids) are a type of unsaturated fatty acid. They occur naturally in small amounts in foods produced from ruminant animals* e.g. milk, beef and lamb. However, most of the trans fatty acids in the diet are produced during the process of partial hydrogenation (hardening) of vegetable oils into semi-solid fats. They are therefore found in hard margarines, partially hydrogenated cooking oils, and in some bakery products, fried foods, and other processed foods that are made using these.</p>
+<p>Trans fatty acids have an adverse effect on certain chemicals, known as lipids, which are found in the blood and have been shown to increase the risk of heart disease. They also increase LDL-cholesterol (the ‘bad cholesterol’) and decrease HDL-cholesterol (the ‘good cholesterol’). They may also have adverse effects on cardiovascular disease risk that are independent of an effect on blood lipids (Mozaffarian <em>et al.</em> 2006).</p>
+<p>In a recent review of prospective studies investigating the effects of trans fatty acids, a 2% increase in energy intake from trans fatty acids was associated with a 23% increase in the incidence of heart disease. The authors also reported that the adverse effects of trans fatty acids were observed even at very low intakes (3% of total daily energy intake, or about 2–7g per day) (Mozaffarian <em>et al.</em> 2006).</p>
+<p>However, in this recent review it is only trans fatty acids produced during the hardening of vegetable oils that are found to be harmful to health. The public health implications of consuming trans fatty acids from ruminant products are considered to be relatively limited.</p>
+<p>Over the last decade, population intakes of trans fatty acids in the UK fell and are now, on average, well below the recommended 2% of total energy set by the Department of Health in 1991, at 1.2% of energy (Henderson <em>et al.</em> 2003). This is not to say that intakes of trans fatty acids are not still a problem, and dietary advice states that those individuals who are in the top end of the distribution of intake should still make efforts to reduce their intakes.</p>
+<p>Currently, trans fatty acids in foods are labelled in the USA, but not in the UK and Europe. The UK Food Standards Agency (FSA) is in favour of the revision of the European directive that governs the content and format of food labels so that trans fatty acids are labelled. This should enable consumers to make better food choices with regard to heart health (Clarke &amp; Lewington 2006).</p>
+<p>Recognising the adverse health effects of trans fatty acids, many food manufacturers and retailers have been systematically removing them from their products in recent years. For example, they have been absent for some time from major brands of margarine and other fat spreads, which are now manufactured using a different technique. Also, many companies now have guidelines in place that are resulting in reformulation and reduction or elimination of trans fatty acids in products where they have in the past been found, such as snack products, fried products and baked goods. Consequently, the vast majority of savoury biscuits and crisps produced in the UK do not contain partially hydrogenated oils. Similarly, changes are being made to the way bakery products are manufactured. For example, a leading European manufacturer of major brands of biscuits, cakes and snacks has recently announced that these are now made without partially hydrogenated vegetable oils, a transition that began in 2004. Alongside these changes, the manufacturer has also reported a cut in the amount of saturates. It is clear that a major technical challenge in achieving such changes is to avoid simply exchanging trans fatty acids for saturated fatty acids, which also have damaging health effects.</p>
+<p>Foods that are labelled as containing partially-hydrogenated oils or fats are a source of trans fatty acids (sometimes ‘partially-hydrogenated’ fats are just labelled as ‘hydrogenated’ fats). These foods include hard margarines, some fried products and some manufactured bakery products e.g. biscuits, pastries and cakes.</p>
+<p>It is important to note that intake may have changed in the light of reformulation of foods that has taken place over the past six years in the UK, as referred to earlier. Furthermore, the average intake of trans fatty acids is lower in the UK than in the USA (where legislation has now been introduced). However, this does not mean there is room for complacency, as the intake in some sectors of the population is known to be higher than recommended.</p>
+<p class="footnote">*animals that mainly eat grass</p>
+<p class="source">Trans Fatty Acids taken from British Medical Journal, 2006, Volume 333, p214, amended with permission from the BMJ Publishing Group.</p>`,
+
+`<p class="intro">You should spend about 20 minutes on Questions 14–26, which are based on Reading Passage 2.</p>
+<h2>Biofuels</h2>
+<p class="standfirst">Are biofuels really the greenhouse-busting answer to our energy problems? It’s not that simple, says Fred Pierce.</p>
+<div class="lp"><b>A</b><span>Soon, we’re told, corn crops will be as valuable as oil. This is because corn and a few other crops are being promoted as the ‘biofuels’ of the future. Biofuel is an umbrella term used to describe all fuels derived from organic matter. The two most common biofuels are bioethanol, which is a substitute for gasoline, and biodiesel. Not only have soaring oil prices made biofuels economically viable for the first time in years, but they could also help countries reduce their dependency on fossil fuel imports. However, the real plus point in the minds of many is their eco-friendly image.</span></div>
+<div class="lp"><b>B</b><span>Supporters claim they will cut our net greenhouse gas inputs dramatically, because the crops soak up carbon dioxide from the atmosphere as they grow. Given this fact, it’s no surprise that politicians and environmentalists the world over are backing the idea, hoping we will soon be using this green alternative to power our cars, buses and trains. Other scientists, however, have begun to question the environmental and social arguments for biofuels. Far from solving our problems they believe biofuels will destroy rainforests, suck water reserves dry, kill off species and raise food prices. Worst of all, they claim that many biofuels will barely slow global warming at all if the technology behind them does not improve. Biofuel supporters counter that it’s still early days, and we should give this technology the time and investment to deliver on its promise. So who’s right?</span></div>
+<div class="lp"><b>C</b><span>The controversy may be brand new, but the biofuels themselves are an old idea. The Model T Ford, first produced in 1908, was designed to run on ethanol, and Rudolf Diesel, who invented the diesel engine in 1892, ran his demonstration model on peanut oil. Biofuels fell out of favour as petroleum-based fuels appeared and became cheaper to produce, but, after the oil crisis of the early 1970s, some countries returned to biofuels. For example, Brazil has been producing large quantities of ethanol from sugar cane for over 30 years. Brazilian law now requires that 20 per cent of fuel be blended with bioethanol, which all gasoline-powered cars can tolerate. Over 15 per cent of Brazil’s cars can even run on pure bioethanol.</span></div>
+<div class="lp"><b>D</b><span>According to a recent study by the Worldwatch Institute, for Brazil to produce ten per cent of its entire fuel consumption requires just three per cent of its agricultural land, so it’s not surprising that other places want to emulate Brazil’s approach. The problem is that in most other countries, the numbers don’t add up. The same study estimated that to meet that ten per cent target, the US would require 30 per cent of its agricultural land, and Europe a staggering 72 per cent. It’s no secret why things stack up so differently. Not only do Brazilians drive far less than Europeans and Americans, their fertile land and favourable climate mean their crop yields are higher, and their population density is lower.</span></div>
+<div class="lp"><b>E</b><span>Several research groups have tried to compare fossil fuel emissions with those of corn bioethanol at every stage of production from seed sowing to fuel production. The studies have been beset by scientific uncertainties, such as how much of the greenhouse gas nitrous oxide is produced by the nitrogen fertiliser used in growing corn. Opinions are divided as to what should and should not be included in the calculations, which means the results vary widely, but a study by David Pimentel at Cornell University in New York concluded that corn ethanol creates more greenhouse gases than burning fossil fuels.</span></div>
+<div class="lp"><b>F</b><span>Another reason a growing number of people oppose biofuels is that growing corn for ethanol uses up land that is currently supplying food to the world. According to Lester Brown, veteran commentator and activist on food politics, the corn required to fill a 4x4 tank with bioethanol just once could feed one person for a year. He predicts that a boom in bioethanol would lead to a competition between the 800 million people in the world who own automobiles and the three billion people who live on less than $2 a day, many of whom are already spending over half their income on food.</span></div>
+<div class="lp"><b>G</b><span>So are we utterly mistaken to think that bioethanol could usher in an era of greener energy? The way things are developing, it certainly looks that way, but it needn’t be so. Scientists want to perfect a way to make biofuels from non-food crops and waste biomass, saving the corn and other food crops for food use, and to do it without wrecking natural ecosystems. Already researchers are discovering ways to convert cellulose-rich organic matter into ethanol. Cellulose is the main structural component of all green plants. Its molecules comprise chains of sugars strong enough to make plant cell walls. If you could break down those molecules to release the sugars they contain, you could ferment them until ethanol is created. Developing such a process could open the door to many non-food materials such as switchgrass – a wild grass that thrives in the eastern states and Midwest of the US – straw, crop residues like stalks and hardwood chips. Its supporters say these cellulose materials could deliver twice as much ethanol per hectare as corn, and do it using land that is today neither economically productive nor environmentally precious. Some even think municipal waste such as paper, cardboard and waste food could also be used.</span></div>
+<div class="lp"><span></span><span>If the numbers add up this could be the development that may yet deliver us from our dependence on oil, without costing us the Earth in the process.</span></div>`,
+
+`<p class="intro">You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3.</p>
+<h2>A Comparative Study of Innovation Practices in Business</h2>
+<p class="standfirst">Companies want to be innovative, but what does innovation mean?</p>
+<p>Results of interviews with corporate executives and senior innovation officers in four of the largest publicly-traded companies and one government agency in the Chicago-area, provide some insights into how businesses approach innovation.</p>
+<p>The dictionary defines innovation as ‘the introduction of something new’. Regardless of the type of innovation – whether it be product, process, or service – it results in significant change. This change could be as simple as ‘changing the way we do something routine,’ a breakthrough which provides a substantial benefit to the customer, or one that dramatically increases the revenue or profitability of the company.</p>
+<p>Participants interested in breakthrough innovation believe ‘if innovation doesn’t deliver bottom-line results, it is just creativity’. Indeed, the very definition of innovation for Afuah (2003) is ‘invention plus commercialization.’ The relationship of innovation to financial performance was well demonstrated by Kirn and Mauborgne (1997). In manufacturing environments, they found that while 86% of product launches involved some small improvements to existing models – that is, incremental changes – they accounted for only 62% of total revenues and 39% of total profits. The remaining 14% of launches – the real breakthrough innovations – generated 38% of total revenues and a huge 61% of total profits.</p>
+<p>Innovation may offer one significant way that companies can gain advantage. Utterback’s (1994) concept of ‘dominant design’ provides insight into how an innovation can create a temporary monopoly situation that will weaken competitive forces; however, when an innovative product or service is launched, rivals typically begin to copy it (once patents run out). Hence, it is necessary for the company to continuously seek further ways to innovate.</p>
+<p>Every innovation process has its strengths and weaknesses, but it seems that when a company sets up a systematized innovation process it communicates the importance of innovation to the entire organization. In these companies, more resources are devoted to development. The best companies have learned to systematize the process (Hargadorn &amp; Sutton, 2000).</p>
+<p>The primary disadvantage to having a structured innovation process is speed to market – the more structure, the longer the lead time is from idea to product. The only company that described its process as ‘quick’ did not have such a process. Employees were empowered to solve problems and create new products for the customer by responding to demand. While this benefits customers, the company stated it lacks systems to share learning with other segments of the organization. A potential disadvantage of this approach, according to Utterback, is that evolutionary change can be missed when companies are too focused on pleasing customers.</p>
+<p>The most challenging aspect of any innovation is determining marketability. No company said it lacked creative ideas or creative people, but many ideas require significant resources to test, develop, and launch. Millions of dollars are at stake, so an element of risk-taking is required.</p>
+<p>Taking risks is generally defined as being able to drive new ideas forward in the face of adversity. Publicly-traded companies have a major dilemma. To guarantee a leadership position, they have to stay on the leading-edge of innovation. This requires a long-term approach and a high tolerance for risk. Investors, especially in a down economy, want short-term results. As investors’ tolerance for risk decreases, so does the company’s ability to take the significant financial risk necessary to create breakthrough change; however, most recognize that investing in innovation is the ‘right thing to do’.</p>
+<p>One company actively pursues a rather unusual strategy of ‘acquiring’ innovation by purchasing other smaller companies or partnering with specialized companies. This enables the acquiring company to bring a product to market more quickly and gives the smaller company access to funds it might not otherwise have.</p>
+<p>How can a company involve all its employees in the innovation process? It may be as simple as requesting new ideas. A brainstorming session during a staff meeting need only take 30 minutes. Another system is to use existing ‘suggestion box’ processes. Involving employees in idea-generation can reap some large benefits at a very low cost. Only modest monetary rewards are necessary for successful innovation ideas, especially since many companies have found that employees place high value on recognition.</p>
+<p>In most organizations, teams are extensively used to evaluate ideas, but rarely to generate them. Companies need to learn how to construct teams for the purpose of innovation. A team member should be selected based on their tendency to be more creative or more risk-taking. This could markedly increase innovation output. According to Hargadorn and Sutton, using teams to capture and share ideas is one method of keeping ideas alive – a key step in the innovation process. Good ideas need to be nurtured by teams and incorporated into the information and communication systems of the company.</p>
+<p>In conclusion, innovation can be difficult to structure. It is the authors’ perception that even the most innovative companies in the sample underinvest in market research during the concept refining phase. Risk could be reduced considerably by adoption of this strategy, but, of course, it could not be eliminated.</p>
+<p>Most of the ‘problems’ cited by participants were due to a low tolerance for risk – by employees (what they would or would not say), and by committees (being afraid to invest money without knowing the return on investment). Raising the risk tolerance would reduce the amount of analysis required to bring a new idea to market, thus shortening the cycle time of new product/service development. According to psychologists Kahn and Hirshorn, people come alive when they feel safe. It is threat and anxiety that inhibit them. It would follow that in order for people in organizations to take risks, lack of success must be tolerated. The organizations that manage risk most effectively transform those risks into challenges and opportunities.</p>`
+];
+
+const G = "A B C D E F G".split(" "), E5 = "A B C D E".split(" "), I9 = "A B C D E F G H I".split(" ");
+const gap = q => `<span class="gapnum">${q}</span><input class="gap" type="text" data-q="${q}" aria-label="Answer ${q}" autocomplete="off" spellcheck="false">`;
+
+const GROUPS = [
+ [ // Passage 1
+  {title:"Questions 1–7", instr:`Do the following statements agree with the information given in Reading Passage 1? Choose <strong>TRUE</strong> if the statement agrees with the information, <strong>FALSE</strong> if the statement contradicts the information, or <strong>NOT GIVEN</strong> if there is no information on this.`,
+   items:[
+    {t:"tfng",q:1,text:"Trans fatty acids are found in all types of meat."},
+    {t:"tfng",q:2,text:"Health problems can be caused by the consumption of small amounts of trans fatty acids."},
+    {t:"tfng",q:3,text:"Experts consider that the trans fatty acids contained in animal products are unlikely to be a serious health risk."},
+    {t:"tfng",q:4,text:"In Britain, the intake of trans fatty acids is continuing to decline."},
+    {t:"tfng",q:5,text:"The amount of saturated fats in processed meats is being reduced by some major producers."},
+    {t:"tfng",q:6,text:"It is proving difficult to find a safe substitute for trans fatty acids."},
+    {t:"tfng",q:7,text:"Some people are still consuming larger quantities of trans fatty acids than the experts consider safe."}
+   ]},
+  {title:"Questions 8–13", instr:`Complete the sentences below. Choose <strong>NO MORE THAN THREE WORDS</strong> from the passage for each answer.`,
+   items:[
+    {t:"gap",q:8,html:`Scientists at Oxford University propose that information about trans fatty acids should be included on ${gap(8)} .`},
+    {t:"gap",q:9,html:`In food manufacture, the majority of trans fatty acids are created when ${gap(9)} are solidified.`},
+    {t:"gap",q:10,html:`The likelihood of a person developing ${gap(10)} is increased by trans fatty acid consumption.`},
+    {t:"gap",q:11,html:`In the UK, the ${gap(11)} established a limit for the safe daily consumption of trans fatty acids.`},
+    {t:"gap",q:12,html:`Partially hydrogenated oils are no longer found in most UK manufactured salty ${gap(12)} .`},
+    {t:"gap",q:13,html:`Consumption of trans fatty acids in ${gap(13)} is now higher than in the UK.`}
+   ]}
+ ],
+ [ // Passage 2
+  {title:"Questions 14–19", instr:`Reading Passage 2 has seven paragraphs, <strong>A–G</strong>. Which paragraph contains the following information? Choose the correct letter <strong>A–G</strong>.`,
+   items:[
+    {t:"sel",q:14,text:"reasons for the success of bioethanol production in one region",o:G},
+    {t:"sel",q:15,text:"an individual’s prediction of the consequences of increasing production of corn ethanol",o:G},
+    {t:"sel",q:16,text:"a reference to why biofuels might help to slow down global warming",o:G},
+    {t:"sel",q:17,text:"a definition of biofuel",o:G},
+    {t:"sel",q:18,text:"a reference to research that found one type of bioethanol to be less ecofriendly than oil",o:G},
+    {t:"sel",q:19,text:"examples of how ethanol was used as a fuel before petroleum",o:G}
+   ]},
+  {title:"Questions 20–25", instr:`Complete the summary below. Choose <strong>NO MORE THAN TWO WORDS</strong> from the passage for each answer.`,
+   summary:`<h4>Using Non-Food Crops to Make Biofuels</h4>A major constituent of green plants is cellulose. The ${gap(20)} of cellulose are made up of sugars. These form the ${gap(21)} of plants. Ethanol could be produced by extracting the sugars and allowing them to ${gap(22)} . One common North American plant that could be used in this method is ${gap(23)} . Some scientists believe that this would be a more productive source of ethanol than ${gap(24)} . Additionally, the source plant materials could be grown in ground which is not currently being used for agriculture and is not ${gap(25)} valuable.`},
+  {title:"Question 26", instr:`Choose the correct letter, <strong>A, B, C or D</strong>.`,
+   items:[
+    {t:"mcq",q:26,text:"What conclusion does the writer of the text come to?",c:[
+      ["A","Bioethanol made from sugar cane will be the cheapest fuel worldwide."],
+      ["B","The US could become self-sufficient in biofuel made from corn."],
+      ["C","A biofuel may be made in time which does not damage the environment."],
+      ["D","Scientists agree that some form of bioethanol is the future for fuel."]]}
+   ]}
+ ],
+ [ // Passage 3
+  {title:"Questions 27–33", instr:`Look at the following theories and the list of experts below. Match each theory with the correct expert <strong>A–E</strong>. You may use any letter more than once.`,
+   key:`<b>A</b> Afuah<br><b>B</b> Kirn and Mauborgne<br><b>C</b> Utterback<br><b>D</b> Hargardorn and Sutton<br><b>E</b> Kahn and Hirshorn`,
+   items:[
+    {t:"sel",q:27,text:"A business cannot rely on the success of one good innovation.",o:E5},
+    {t:"sel",q:28,text:"A group approach is an effective way of generating innovation.",o:E5},
+    {t:"sel",q:29,text:"Employees are more creative in a culture that accepts failure.",o:E5},
+    {t:"sel",q:30,text:"Radical innovations will provide greater income than minor changes.",o:E5},
+    {t:"sel",q:31,text:"Businesses with a structured approach to innovation are more likely to succeed.",o:E5},
+    {t:"sel",q:32,text:"Innovation consists of a new idea combined with business potential.",o:E5},
+    {t:"sel",q:33,text:"A business that concentrates on responding to clients’ needs may overlook the need for wider development.",o:E5}
+   ]},
+  {title:"Questions 34–40", instr:`Complete each sentence with the correct ending <strong>A–I</strong> below.`,
+   endings:[
+    ["A","can be to develop a sympathetic manufacturing environment."],
+    ["B","must put time and money into innovation."],
+    ["C","can be a very cost-effective way of achieving innovation."],
+    ["D","may require a more sophisticated communication system."],
+    ["E","may give rise to a lengthy period between initial concept and launch."],
+    ["F","could be attributed to an unwillingness to accept risk."],
+    ["G","can be to work out the saleability of a future product."],
+    ["H","would be to put more money into the analysis of customer demand."],
+    ["I","might involve collaboration with another company with particular expertise."]],
+   items:[
+    {t:"sel",q:34,text:"Unfortunately the development of an organised innovation process …",o:I9},
+    {t:"sel",q:35,text:"One of the most difficult issues in innovation …",o:I9},
+    {t:"sel",q:36,text:"A company wanting to maintain a leading position in business …",o:I9},
+    {t:"sel",q:37,text:"A different approach to achieving innovation …",o:I9},
+    {t:"sel",q:38,text:"Getting staff to come up with new ideas …",o:I9},
+    {t:"sel",q:39,text:"A recommendation for companies already committed to innovation …",o:I9},
+    {t:"sel",q:40,text:"Problems experienced by companies participating in the study …",o:I9}
+   ]}
+ ]
+];
+
+const TYPES = [
+  ["True / False / Not Given",[1,7]],
+  ["Sentence completion",[8,13]],
+  ["Matching paragraphs",[14,19]],
+  ["Summary completion",[20,25]],
+  ["Multiple choice",[26,26]],
+  ["Matching experts",[27,33]],
+  ["Sentence endings",[34,40]]
+];
+const PASSAGE_RANGES = [["Passage 1: Trans Fatty Acids",1,13],["Passage 2: Biofuels",14,26],["Passage 3: Innovation in Business",27,40]];
+
+const K = {"1":["e28c2fabe3f8e642e0fd"],"2":["cbd216f4c21041178a5b"],"3":["cbe10a57730ffad36bcb"],"4":["4fb3e75edb73f58941be"],"5":["8406d1d253b20effbf78"],"6":["5b35305ce03b15e8aa35"],"7":["2a5f00bf6a08e7bedbc8"],"8":["4c253d9191829c32cdfb"],"9":["f7f219004966fe8f68b0","5ca41b276021ece3763e"],"10":["8ab05338da79bed15218","ba0557abe264cf644315"],"11":["376c3f1c379b409bfd02"],"12":["09d25f6de5da7650c1ac","32edf5b8b34245ccc9af"],"13":["e1786ec9624ec371e9b1"],"14":["54c67a5e6fe5409aa36d"],"15":["988557548be75d9c94f6"],"16":["711d7e54020f3706e5e9"],"17":["826dd442acce95a06b26"],"18":["1f00e2adf973c6ed59f2"],"19":["d9f65258592105fc74ad"],"20":["04e659206753160535c1"],"21":["f8c5187d99ee30a7140a","4f19fdaeed307be9b575","1e70c5109c1f2efb4aa3"],"22":["0e87c1025b77ff5ace5d"],"23":["62c35589a32ed3d2b085"],"24":["bc6ae72b75ef3edd13ba"],"25":["b2504c2bfd87b3ea0c1a"],"26":["3c2a52a71b025e592088"],"27":["5322861475d26aeb99b4"],"28":["8db141e0db8003be8e15"],"29":["f63acc64263c8dd1ecb7"],"30":["f59ddf757b97af9a8291"],"31":["5b8ce2ed8fe6320d1377"],"32":["e7964ff673d340a940ed"],"33":["726f21fa0f17f2bd570d"],"34":["209de632b5610366fb9d"],"35":["76cf2c11ee7315839f60"],"36":["73213e8c3a7c32be5f2b"],"37":["b506270d9ed7df80b54d"],"38":["a3057bad9d2cf2f2788a"],"39":["3da26df53c177d63f201"],"40":["c04fa0cc06ed08224a93"]};
+
+/* ---------- State ---------- */
+const STORE = "achieve-ielts-t1-reading";
+const DURATION = 60*60*1000;
+let S = {name:"",answers:{},start:0,cur:0};
+let tick = null, submitting = false;
+
+const $ = id => document.getElementById(id);
+const save = () => { try{ localStorage.setItem(STORE, JSON.stringify(S)); }catch(e){} };
+const load = () => { try{ const v = localStorage.getItem(STORE); return v ? JSON.parse(v) : null; }catch(e){ return null; } };
+const clear = () => { try{ localStorage.removeItem(STORE); }catch(e){} };
+
+/* ---------- Render questions ---------- */
+function renderPassage(i){
+  $("passagePane").innerHTML = PASSAGES[i];
+  const qs = $("qs"); qs.innerHTML = "";
+  GROUPS[i].forEach(g=>{
+    const sec = document.createElement("section"); sec.className="group";
+    let h = `<h3>${g.title}</h3><p class="instr">${g.instr}</p>`;
+    if(g.key) h += `<div class="key">${g.key}</div>`;
+    if(g.endings) h += `<div class="endings">${g.endings.map(e=>`<b>${e[0]}</b><span>${e[1]}</span>`).join("")}</div>`;
+    if(g.summary) h += `<div class="summary">${g.summary}</div>`;
+    (g.items||[]).forEach(it=>{
+      if(it.t==="tfng"){
+        h += `<div class="q" data-qwrap="${it.q}"><span class="num">${it.q}</span><div><p class="qtext">${it.text}</p><div class="chips" role="radiogroup" aria-label="Question ${it.q}">${["TRUE","FALSE","NOT GIVEN"].map(v=>`<label class="chip"><input type="radio" name="q${it.q}" value="${v}" data-q="${it.q}"><span>${v}</span></label>`).join("")}</div></div></div>`;
+      } else if(it.t==="gap"){
+        h += `<div class="q" data-qwrap="${it.q}"><span class="num">${it.q}</span><p class="qtext">${it.html.replace(/<span class="gapnum">\d+<\/span>/,"")}</p></div>`;
+      } else if(it.t==="sel"){
+        h += `<div class="q" data-qwrap="${it.q}"><span class="num">${it.q}</span><div class="qrow"><p class="qtext">${it.text}</p><select class="pick" data-q="${it.q}" aria-label="Answer for question ${it.q}"><option value="">Choose</option>${it.o.map(o=>`<option value="${o}">${o}</option>`).join("")}</select></div></div>`;
+      } else if(it.t==="mcq"){
+        h += `<div class="q" data-qwrap="${it.q}"><span class="num">${it.q}</span><div class="mcq"><p class="qtext">${it.text}</p>${it.c.map(c=>`<label><input type="radio" name="q${it.q}" value="${c[0]}" data-q="${it.q}"><span><b>${c[0]}</b>&nbsp; ${c[1]}</span></label>`).join("")}</div></div>`;
+      }
+    });
+    sec.innerHTML = h; qs.appendChild(sec);
+  });
+  const pager = document.createElement("div"); pager.className="pager";
+  pager.innerHTML = (i>0?`<button class="btn ghost" data-go="${i-1}">Back to Passage ${i}</button>`:`<span></span>`) +
+    (i<2?`<button class="btn" data-go="${i+1}">Next: Passage ${i+2}</button>`:`<button class="btn" data-submit>Submit answers</button>`);
+  qs.appendChild(pager);
+
+  // restore values
+  qs.querySelectorAll("[data-q]").forEach(el=>{
+    const v = S.answers[el.dataset.q]; if(v==null) return;
+    if(el.type==="radio") el.checked = (el.value===v); else el.value = v;
+  });
+  markAnswered();
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected", String(+t.dataset.p===i)));
+  $("passagePane").scrollTop = 0; $("questionPane").scrollTop = 0;
+  if(window.innerWidth < 960) window.scrollTo(0,0);
+}
+
+function markAnswered(){
+  document.querySelectorAll("[data-qwrap]").forEach(w=>{
+    const v = S.answers[w.dataset.qwrap];
+    w.classList.toggle("answered", v!=null && String(v).trim()!=="");
+  });
+  const n = Object.values(S.answers).filter(v=>String(v).trim()!=="").length;
+  $("progress").textContent = `${n} of 40 answered`;
+}
+
+$("qs").addEventListener("input", e=>{
+  const el = e.target; if(!el.dataset.q) return;
+  S.answers[el.dataset.q] = el.value; save(); markAnswered();
+});
+$("qs").addEventListener("change", e=>{
+  const el = e.target; if(!el.dataset.q) return;
+  S.answers[el.dataset.q] = el.value; save(); markAnswered();
+});
+$("qs").addEventListener("click", e=>{
+  const go = e.target.closest("[data-go]"); if(go){ S.cur=+go.dataset.go; save(); renderPassage(S.cur); return; }
+  if(e.target.closest("[data-submit]")) askSubmit();
+});
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{ S.cur=+t.dataset.p; save(); renderPassage(S.cur); }));
+
+/* ---------- Timer ---------- */
+const fmt = ms => { const s=Math.max(0,Math.round(ms/1000)); return `${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`; };
+function runTimer(){
+  clearInterval(tick);
+  const upd = ()=>{
+    const left = DURATION - (Date.now()-S.start);
+    $("timer").textContent = fmt(left);
+    $("timer").classList.toggle("warn", left <= 10*60*1000);
+    if(left<=0){ clearInterval(tick); finish(); }
+  };
+  upd(); tick = setInterval(upd, 1000);
+}
+
+/* ---------- Flow ---------- */
+function show(id){ ["welcome","test","results"].forEach(s=>$(s).classList.toggle("hidden", s!==id)); }
+
+function beginTest(){
+  $("whoName").textContent = S.name;
+  show("test"); renderPassage(S.cur||0); runTimer();
+}
+
+$("startBtn").addEventListener("click", ()=>{
+  const n = $("nameInput").value.trim().replace(/\s+/g," ");
+  if(n.length<2){ $("nameErr").textContent = "Enter your name to start the test."; $("nameInput").focus(); return; }
+  S = {name:n, answers:{}, start:Date.now(), cur:0}; save(); beginTest();
+});
+$("nameInput").addEventListener("keydown", e=>{ if(e.key==="Enter") $("startBtn").click(); });
+$("nameInput").addEventListener("input", ()=>{ $("nameErr").textContent=""; });
+
+const saved = load();
+if(saved && saved.name && saved.start && !saved.done){
+  const left = DURATION-(Date.now()-saved.start);
+  $("resumeText").textContent = left>0
+    ? `${saved.name}, you have an unfinished attempt with ${fmt(left)} left.`
+    : `${saved.name}, your last attempt ran out of time and is ready to be marked.`;
+  $("resumeBox").classList.remove("hidden");
+  $("resumeBtn").textContent = left>0 ? "Continue where I left off" : "See my results";
+  $("resumeBtn").addEventListener("click", ()=>{ S = saved; if(left>0) beginTest(); else finish(); });
+}
+
+function askSubmit(){
+  const n = Object.values(S.answers).filter(v=>String(v).trim()!=="").length;
+  $("modalText").textContent = n<40
+    ? `You have answered ${n} of 40 questions. ${40-n} ${40-n===1?"question is":"questions are"} still blank. You can’t change answers after submitting.`
+    : "You have answered all 40 questions. You can’t change answers after submitting.";
+  $("modal").classList.remove("hidden"); $("cancelSubmit").focus();
+}
+$("submitTop").addEventListener("click", askSubmit);
+$("cancelSubmit").addEventListener("click", ()=>$("modal").classList.add("hidden"));
+$("confirmSubmit").addEventListener("click", ()=>{ $("modal").classList.add("hidden"); finish(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") $("modal").classList.add("hidden"); });
+
+/* ---------- Marking ---------- */
+function norm(s){
+  s = String(s).toLowerCase().replace(/\u2019/g,"'").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();
+  if(s.startsWith("the ")) s = s.slice(4);
+  return s;
+}
+async function h(str){
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("").slice(0,20);
+}
+function band(n){
+  const t=[[39,9],[37,8.5],[35,8],[33,7.5],[30,7],[27,6.5],[23,6],[19,5.5],[15,5],[13,4.5],[10,4],[8,3.5],[6,3],[4,2.5],[2,2],[1,1]];
+  for(const [m,b] of t) if(n>=m) return b; return 0;
+}
+
+async function finish(){
+  if(submitting) return; submitting = true;
+  clearInterval(tick);
+  const used = Math.min(DURATION, Date.now()-S.start);
+  const res = {};
+  for(let q=1;q<=40;q++){
+    const raw = S.answers[q]; const v = raw==null ? "" : String(raw).trim();
+    if(!v){ res[q]="skip"; continue; }
+    const hv = await h(`ach1|${q}|${norm(v)}`);
+    res[q] = K[q].includes(hv) ? "ok" : "bad";
+  }
+  S.done = true; save();
+  renderResults(res, used);
+}
+
+function renderResults(res, used){
+  const ok = Object.values(res).filter(r=>r==="ok").length;
+  const bad = Object.values(res).filter(r=>r==="bad").length;
+  const skip = 40-ok-bad;
+  $("resName").textContent = S.name;
+  $("resWhen").textContent = "Submitted " + new Date().toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+  $("resScore").textContent = ok;
+  const b = band(ok); $("resBand").textContent = Number.isInteger(b)? b.toFixed(1) : b;
+  $("stCorrect").textContent = ok; $("stWrong").textContent = bad; $("stBlank").textContent = skip; $("stTime").textContent = fmt(used);
+
+  const meter = (label,a,z)=>{ let c=0,n=0; for(let q=a;q<=z;q++){ n++; if(res[q]==="ok") c++; }
+    return `<div class="meter"><div class="meter-top"><span>${label}</span><span>${c} / ${n}</span></div><div class="track"><div class="fill" data-w="${(c/n*100).toFixed(1)}"></div></div></div>`; };
+  $("byPassage").innerHTML = PASSAGE_RANGES.map(p=>meter(p[0],p[1],p[2])).join("");
+  $("byType").innerHTML = TYPES.map(t=>meter(t[0],t[1][0],t[1][1])).join("");
+
+  const sheet = $("sheet"); sheet.innerHTML="";
+  PASSAGE_RANGES.forEach(p=>{
+    const sec = document.createElement("div"); sec.className="sheet-sec";
+    const h3 = document.createElement("h3"); h3.textContent = p[0]; sec.appendChild(h3);
+    const grid = document.createElement("div"); grid.className="sheet-grid";
+    for(let q=p[1];q<=p[2];q++){
+      const r = res[q]; const c = document.createElement("div"); c.className = "cell "+r;
+      const ans = S.answers[q] && String(S.answers[q]).trim() ? String(S.answers[q]).trim() : "—";
+      c.innerHTML = `<span class="n">${q}</span><span class="a"></span><span class="m" aria-label="${r==="ok"?"correct":r==="bad"?"incorrect":"blank"}">${r==="ok"?"✓":r==="bad"?"✗":"–"}</span>`;
+      c.querySelector(".a").textContent = ans; c.querySelector(".a").title = ans;
+      grid.appendChild(c);
+    }
+    sec.appendChild(grid); sheet.appendChild(sec);
+  });
+
+  show("results"); window.scrollTo(0,0);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll(".fill").forEach(f=>f.style.width=f.dataset.w+"%")));
+}
+
+$("printBtn").addEventListener("click", ()=>window.print());
+$("retakeBtn").addEventListener("click", ()=>{
+  clear(); S={name:"",answers:{},start:0,cur:0}; submitting=false;
+  $("nameInput").value=""; $("resumeBox").classList.add("hidden"); show("welcome"); $("nameInput").focus();
+});
+})();
+</script>
+</body>
+</html>
